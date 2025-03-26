@@ -1,4 +1,7 @@
+@use 'tw-animate-css';
 @use 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Colors */
@@ -76,7 +79,6 @@ body {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
-
 
 .bg-gradient {
   background: var(--gradient);
