@@ -8,7 +8,7 @@ function Register() {
     return (
         <div className="bg-white p-12 rounded-lg shadow-lg w-xl max-w-xl">
             <form>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-[#FFFF42] to-[#ED2409] bg-clip-text text-transparent text-center mb-12 mt-2">
+                <h1 className="text-3xl font-bold mb-12 mt-2 text-center text-gradient w-full">
                     Đăng ký
                 </h1>
                 <div className="space-y-4">

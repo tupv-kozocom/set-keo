@@ -10,7 +10,7 @@ type SocialButtonProps = {
 
 function SocialButton({ src, alt, name, className, classNameText }: SocialButtonProps) {
     return (
-        <button className={`flex items-center justify-center space-x-3 text-white bg-blue-500 p-3 rounded-lg border border-gray-200 w-full ${className}`}>
+        <button className={`flex items-center justify-center space-x-3 text-white bg-blue-500 p-2 rounded-lg border border-gray-200 w-full ${className}`}>
             <Image
                 src={src}
                 alt={alt}
