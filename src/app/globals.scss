@@ -1,24 +1,40 @@
-@use "tailwindcss";
+@use 'tailwindcss';
 
 :root {
-  --background: #F2F6F7;
+  /* Colors */
+  --background: #f2f6f7;
   --foreground: #363636;
-  --stroke: #EBEBEB;
-  --primary: #F4751E;
-  --gradient: linear-gradient(to bottom right, #FFFF42 0%, #ED2409 100%);
-  --brown: #9C7654;
-  --blue: #2F80ED;
-  --green: #27AE60;
-  --fill: #FDF8F4;
-  --pink:#EB5757;
-  --text-sub: #BABABA;
-  --text-heading: #5C5954;
+  --stroke: #ebebeb;
+  --primary: #f4751e;
+  --brown: #9c7654;
+  --blue: #2f80ed;
+  --green: #27ae60;
+  --yellow: #ffff42;
+  --red: #ed2409;
+  --pink: #eb5757;
+  --soft: #fdf8f4;
+  --dark-gray: #777777;
+  --light-gray: #f8f8f8;
+  --gray-extra-light: #fafafa;
+  --border-light: #e0e0e0;
+
+  /* Gradients */
+  --gradient: linear-gradient(to bottom right, var(--yellow) 0%, var(--red) 100%);
+
+  /* Text Colors */
+  --text: #363636;
+  --text-sub: #bababa;
+  --text-heading: #5c5954;
+
+  /* Fonts */
   --font-sans: 'SVN-Gilroy', Arial, Helvetica, sans-serif;
   --font-serif: 'Merriweather', serif;
   --font-mono: 'Courier New', monospace;
+  --font-lato: 'Lato', sans-serif;
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -28,20 +44,21 @@
   --color-blue: var(--blue);
   --color-green: var(--green);
   --color-gradient: var(--gradient);
-  --color-fill: var(--fill);
+  --color-yellow: var(--yellow);
+  --color-red: var(--red);
+  --color-soft: var(--soft);
+  --color-light-gray: var(--light-gray);
   --color-pink: var(--pink);
   --color-stroke: var(--stroke);
-  --font-sans: var(--font-svn-gilroy);
+  --color-border-light: var(--border-light);
+  --color-gray-extra-light: var(--gray-extra-light);
+
+  /* Fonts */
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
+  --font-lato: var(--font-lato);
 }
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --background: #0a0a0a;
-//     --foreground: #ededed;
-//   }
-// }
 
 body {
   background: var(--background);
@@ -51,9 +68,15 @@ body {
 
 .text-gradient {
   background: var(--gradient);
+  display: inline-block;
+  background-clip: text;
+  color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
+
 
 .bg-gradient {
   background: var(--gradient);
