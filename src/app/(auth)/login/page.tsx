@@ -37,7 +37,7 @@ function Login() {
                         />
                         <Label htmlFor="remember" name="Nhớ tài khoản" />
                     </div>
-                    <Link href="" className="text-gray-400 text-sm">Quên mật khẩu</Link>
+                    <Link href="reset-password" className="text-gray-400 text-sm">Quên mật khẩu</Link>
                 </div>
             </form>
             <Separator name={"Hoặc đăng nhập bằng"} />
