@@ -1,14 +1,14 @@
 import Link from "next/link";
-import Input from "@/components/Form/Input";
-import Checkbox from "@/components/Form/Checkbox";
-import Label from "@/components/Form/Label";
 import Separator from "@/components/Separator";
 import SocialButton from "@/components/Form/SocialButton";
-import Button from "@/components/Form/Button";
+import {Input} from "@/components/ui/input";
+import {Checkbox} from "@/components/ui/checkbox";
+import {Label} from "@/components/ui/label";
+import {Button} from "@/components/ui/button";
 
 function Login() {
     return (
-        <div className="bg-white p-12 rounded-lg shadow-lg max-w-xl">
+        <div className="bg-white p-12 rounded-lg shadow-lg w-xl max-w-xl">
             <form>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-[#FFFF42] to-[#ED2409] bg-clip-text text-transparent text-center mb-12 mt-2">
                     Đăng nhập
@@ -18,24 +18,23 @@ function Login() {
                         type="email"
                         placeholder="Email"
                         name="email"
+                        className="h-12"
                     />
                     <Input
                         type="password"
                         placeholder="Mật khẩu"
                         name="password"
+                        className="h-12"
                     />
                 </div>
-                <Button
-                    type="submit"
-                    name="Đăng nhập"
-                />
+                <Button type="submit" size="lg" className="w-full my-4 bg-orange-500">Đăng nhập</Button>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-2">
                         <Checkbox
                             name="remember"
                             id="remember"
                         />
-                        <Label htmlFor="remember" name="Nhớ tài khoản" />
+                        <Label htmlFor="remember" >Nhớ tài khoản</Label>
                     </div>
                     <Link href="reset-password" className="text-gray-400 text-sm">Quên mật khẩu</Link>
                 </div>
