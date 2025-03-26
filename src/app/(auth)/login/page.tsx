@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Input from "@/components/Form/Input";
 import Checkbox from "@/components/Form/Checkbox";
 import Label from "@/components/Form/Label";
@@ -9,7 +8,7 @@ import Button from "@/components/Form/Button";
 
 function Login() {
     return (
-        <div className="bg-white p-12 rounded-lg shadow-lg">
+        <div className="bg-white p-12 rounded-lg shadow-lg max-w-xl">
             <form>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-[#FFFF42] to-[#ED2409] bg-clip-text text-transparent text-center mb-12 mt-2">
                     Đăng nhập
@@ -36,7 +35,7 @@ function Login() {
                             name="remember"
                             id="remember"
                         />
-                        <Label htmlFor="remember" />
+                        <Label htmlFor="remember" name="Nhớ tài khoản" />
                     </div>
                     <Link href="" className="text-gray-400 text-sm">Quên mật khẩu</Link>
                 </div>
@@ -57,7 +56,7 @@ function Login() {
                 />
             </div>
             <div className="text-center mt-10 mb-2 text-gray-300">
-                Bạn chưa có tài khoản? <Link href="" className="text-slate-400 underline">Đăng ký ngay</Link>
+                Bạn chưa có tài khoản? <Link href="register" className="text-slate-400 underline">Đăng ký ngay</Link>
             </div>
         </div>
     );
