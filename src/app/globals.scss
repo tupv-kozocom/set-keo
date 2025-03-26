@@ -1,26 +1,60 @@
-@import "tailwindcss";
+@use "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F2F6F7;
+  --foreground: #363636;
+  --stroke: #EBEBEB;
+  --primary: #F4751E;
+  --gradient: linear-gradient(to bottom right, #FFFF42 0%, #ED2409 100%);
+  --brown: #9C7654;
+  --blue: #2F80ED;
+  --green: #27AE60;
+  --fill: #FDF8F4;
+  --pink:#EB5757;
+  --text-sub: #BABABA;
+  --text-heading: #5C5954;
+  --font-sans: 'SVN-Gilroy', Arial, Helvetica, sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-mono: 'Courier New', monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-text-sub: var(--text-sub);
+  --color-text-heading: var(--text-heading);
+  --color-brown: var(--brown);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-gradient: var(--gradient);
+  --color-fill: var(--fill);
+  --color-pink: var(--pink);
+  --color-stroke: var(--stroke);
+  --font-sans: var(--font-svn-gilroy);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//   }
+// }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.text-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: var(--gradient);
 }
