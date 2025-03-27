@@ -1,0 +1,11 @@
+.map-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.map {
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    border-radius: 8px;
+}
