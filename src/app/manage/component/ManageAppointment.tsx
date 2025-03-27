@@ -2,6 +2,7 @@ import Link from 'next/link';
 import AppointmentCard from './AppointmentCard';
 import EditIcon from '@/assets/icons/EditIcon';
 import DeleteIcon from '@/assets/icons/DeleteIcon';
+import ContentWrapper from '../../../components/ContentWrapper';
 
 const ManageAppointment = () => {
   const appointments = [
@@ -28,27 +29,29 @@ const ManageAppointment = () => {
 
   return (
     <>
-      <div className="flex justify-between items-end">
-        <h1 className="text-xl font-bold text-gray-800">Lịch hẹn</h1>
-        <div className="flex gap-4 text-gray-500">
-          <Link href="#" className="flex gap-2 items-start group">
-            <EditIcon className="group-hover:text-primary transition duration-200" />
-            <span className="group-hover:text-text-heading group-hover:font-semibold">Sửa</span>
-          </Link>
+      <ContentWrapper
+        title="Lịch hẹn"
+        actions={
+          <>
+            <Link href="#" className="flex gap-2 items-start group">
+              <EditIcon className="group-hover:text-primary text-text-sub transition duration-200" />
+              <span className="group-hover:text-text-heading group-hover:font-semibold text-sm">Sửa</span>
+            </Link>
 
-          <div className="h-[23px] w-[1px] bg-[#F2F2F2]"></div>
-          <Link href="#" className="flex gap-2 items-start group">
-            <DeleteIcon className="group-hover:text-primary transition duration-200" />
-            <span className="group-hover:text-text-heading group-hover:font-semibold">Xóa</span>
-          </Link>
+            <div className="h-[23px] w-[1px] bg-cloud-gray"></div>
+            <Link href="#" className="flex gap-2 items-start group">
+              <DeleteIcon className="group-hover:text-primary text-text-sub transition duration-200" />
+              <span className="group-hover:text-text-heading group-hover:font-semibold text-sm">Xóa</span>
+            </Link>
+          </>
+        }
+      >
+        <div className="space-y-6">
+          {appointments.map((item, index) => (
+            <AppointmentCard key={index} {...item} />
+          ))}
         </div>
-      </div>
-      <hr className="mt-6 border-[#F2F2F2]" />
-      <div className="mt-4 space-y-4">
-        {appointments.map((item, index) => (
-          <AppointmentCard key={index} {...item} />
-        ))}
-      </div>
+      </ContentWrapper>
     </>
   );
 };

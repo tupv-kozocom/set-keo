@@ -28,7 +28,7 @@ const Sidebar = ({ onTabChange }: { onTabChange: (tab: string) => void }) => {
           </a>
         </div>
       </div>
-      <hr className="mt-4 border-[#F2F2F2]" />
+      <hr className="mt-4 border-cloud-gray" />
 
       {/* Tabs */}
       <Tabs defaultValue="appointments" onValueChange={onTabChange} className="mt-8 w-full">
@@ -39,7 +39,7 @@ const Sidebar = ({ onTabChange }: { onTabChange: (tab: string) => void }) => {
               <TabsTrigger
                 key={index}
                 value={tab.value}
-                className="group flex gap-2 p-4 w-full items-start justify-center xl:justify-start rounded-lg text-left hover:bg-gray-extra-light"
+                className="group flex gap-2 p-4 w-full items-center justify-center xl:justify-start rounded-lg text-left hover:bg-gray-extra-light"
                 onClick={() => {
                   if (tab.value !== 'logout') {
                     onTabChange(tab.value);
