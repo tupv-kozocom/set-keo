@@ -33,13 +33,13 @@ const ManageAppointment = () => {
         <div className="flex gap-4 text-gray-500">
           <Link href="#" className="flex gap-2 items-start group">
             <EditIcon className="group-hover:text-primary transition duration-200" />
-            <span>Sửa</span>
+            <span className="group-hover:text-text-heading group-hover:font-semibold">Sửa</span>
           </Link>
 
           <div className="h-[23px] w-[1px] bg-[#F2F2F2]"></div>
           <Link href="#" className="flex gap-2 items-start group">
             <DeleteIcon className="group-hover:text-primary transition duration-200" />
-            <span>Xóa</span>
+            <span className="group-hover:text-text-heading group-hover:font-semibold">Xóa</span>
           </Link>
         </div>
       </div>
