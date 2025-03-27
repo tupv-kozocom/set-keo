@@ -47,7 +47,7 @@ function Register() {
                 <Button
                     type="submit"
                     name=""
-                    className="w-full text-white"
+                    className="w-full text-white cursor-pointer"
                     size="xl"
                 >Đăng ký</Button>
             </form>

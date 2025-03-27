@@ -18,7 +18,7 @@ function ForgotPassword() {
         <Button
             type="submit"
             size="xl"
-            className="w-full text-white mt-4"
+            className="w-full text-white mt-4 cursor-pointer"
         >
             Lấy lại mật khẩu
         </Button>

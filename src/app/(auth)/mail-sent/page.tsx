@@ -10,7 +10,7 @@ function MailSent() {
                 <p className="text-gray-500 text-center mb-4 px-8">Chúng tôi đã gửi email tài khoản của quý khách, vui lòng xác thực</p>
                 <Button
                     type="button"
-                    className="w-full text-white mt-4"
+                    className="w-full text-white mt-4 cursor-pointer"
                     size="xl"
                 >Đi đến mail</Button>
             </form>

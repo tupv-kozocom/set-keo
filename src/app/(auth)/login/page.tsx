@@ -29,7 +29,7 @@ function Login() {
                 </div>
                 <Button
                     type="submit"
-                    className="w-full text-white my-4"
+                    className="w-full text-white my-4 cursor-pointer"
                     size="xl"
                 >Đăng nhập</Button>
                 <div className="flex justify-between items-center">
