@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Sidebar from './component/Sidebar';
 import ManageAppointment from './component/ManageAppointment';
 import ManageInvitation from './component/ManageInvitation';
+import ManageAccount from './component/ManageAccount';
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -15,7 +16,7 @@ export default function Page() {
       <main className="col-span-12 xl:col-span-9 bg-white rounded-lg p-8">
         {activeTab === 'appointments' && <ManageAppointment />}
         {activeTab === 'invitations' && <ManageInvitation />}
-        {activeTab === 'profile' && <p className="text-gray-600">Thông tin cá nhân đang cập nhật...</p>}
+        {activeTab === 'profile' && <ManageAccount />}
       </main>
     </div>
   );
