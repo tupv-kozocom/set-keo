@@ -82,6 +82,7 @@
   --color-red: var(--red);
   --color-soft: var(--soft);
   --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
   --color-pink: var(--pink);
   --color-stroke: var(--stroke);
   --color-border-light: var(--border-light);
@@ -114,4 +115,25 @@ body {
 
 .bg-gradient {
   background: var(--gradient);
+}
+
+// Custom scrollbar
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
