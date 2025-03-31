@@ -5,6 +5,7 @@ import { useState } from 'react';
 import CreateForm from './component/CreateForm';
 import Image from 'next/image';
 import Link from 'next/link';
+import ROUTES from '@/constants/routeName';
 
 export default function Page() {
   const [postStatus, setPostStatus] = useState('public');
@@ -20,9 +21,9 @@ export default function Page() {
 
       {/* Breadcrumb */}
       <div className="py-4 flex items-center space-x-2 text-sm">
-        <Link href="/">Trang chủ</Link>
+        <Link href={ROUTES.HOME}>Trang chủ</Link>
         <Image src="/arrow-right.svg" width={6} height={6} alt="arrow-right" />
-        <Link href="/create" className="text-primary">
+        <Link href={ROUTES.CREATE} className="text-primary">
           Tạo cuộc hẹn nhóm
         </Link>
       </div>
