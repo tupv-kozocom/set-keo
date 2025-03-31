@@ -4,16 +4,27 @@ import UserIcon from '@/assets/icons/UserIcon';
 import LogoutIcon from '@/assets/icons/LogoutIcon';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import React from 'react';
+import React, { useCallback } from 'react';
+import MANAGE_TABS from '@/constants/manageTab';
+import TabId from '@/types/tabId.type';
 
 const tabList = [
-  { value: 'appointments', text: 'Quản lý cuộc hẹn', icon: DocumentIcon },
-  { value: 'invitations', text: 'Lời mời tham gia', icon: PeopleIcon },
-  { value: 'profile', text: 'Thông tin cá nhân', icon: UserIcon },
+  { value: MANAGE_TABS.APPOINTMENTS, text: 'Quản lý cuộc hẹn', icon: DocumentIcon },
+  { value: MANAGE_TABS.INVITATIONS, text: 'Lời mời tham gia', icon: PeopleIcon },
+  { value: MANAGE_TABS.PROFILE, text: 'Thông tin cá nhân', icon: UserIcon },
   { value: 'logout', text: 'Đăng xuất', icon: LogoutIcon },
 ];
 
-const Sidebar = ({ onTabChange }: { onTabChange: (tab: string) => void }) => {
+const Sidebar = ({ onTabChange }: { onTabChange: (tab: TabId) => void }) => {
+  const handleTabChange = useCallback(
+    (value: string) => {
+      if (value !== 'logout') {
+        onTabChange(value as TabId);
+      }
+    },
+    [onTabChange]
+  );
+
   return (
     <div className="h-fit col-span-12 xl:col-span-3 bg-white px-6 py-6 xl:py-16 rounded-[10px]">
       <div className="flex xl:flex-col items-center justify-center">
@@ -31,26 +42,18 @@ const Sidebar = ({ onTabChange }: { onTabChange: (tab: string) => void }) => {
       <hr className="mt-4 border-cloud-gray" />
 
       {/* Tabs */}
-      <Tabs defaultValue="appointments" onValueChange={onTabChange} className="mt-8 w-full">
+      <Tabs defaultValue={MANAGE_TABS.APPOINTMENTS} onValueChange={handleTabChange} className="mt-8 w-full">
         <TabsList className="flex xl:flex-col justify-between gap-1 lg:gap-4 w-full">
-          {tabList.map((tab, index) => {
-            const Icon = tab.icon;
-            return (
-              <TabsTrigger
-                key={index}
-                value={tab.value}
-                className="group flex gap-2 p-4 w-full items-center justify-center xl:justify-start rounded-lg text-left hover:bg-gray-extra-light"
-                onClick={() => {
-                  if (tab.value !== 'logout') {
-                    onTabChange(tab.value);
-                  }
-                }}
-              >
-                <Icon className="text-text-sub group-data-[state=active]:text-primary scale-[1.2]" />
-                <span className="hidden md:inline">{tab.text}</span>
-              </TabsTrigger>
-            );
-          })}
+          {tabList.map(({ value, text, icon: Icon }) => (
+            <TabsTrigger
+              key={value}
+              value={value}
+              className="group flex gap-2 p-4 w-full items-center justify-center xl:justify-start rounded-lg text-left hover:bg-gray-extra-light"
+            >
+              <Icon className="text-text-sub group-data-[state=active]:text-primary scale-[1.2]" />
+              <span className="hidden md:inline">{text}</span>
+            </TabsTrigger>
+          ))}
         </TabsList>
       </Tabs>
     </div>
