@@ -1,4 +1,3 @@
-
 import PostCarousel from "@/components/Post/PostCarousel";
 import SuggestedPosts from "@/components/Post/PostDetail/SuggestedPosts";
 import PostBreadcrumb from "@/components/Post/PostBreadcrumb";
@@ -9,14 +8,7 @@ import PostComment from "@/components/Post/PostDetail/PostComment";
 import PostAction from "@/components/Post/PostDetail/PostAction";
 import PostEngagement from "@/components/Post/PostDetail/PostEngagement";
 
-type PostDetailProps = {
-    params: Promise<{
-        id: string;
-    }>;
-}
-
-async function PostDetail({params}: PostDetailProps) {
-    const {id} = await params;
+async function PostDetail() {
 
     return (
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 mt-4">

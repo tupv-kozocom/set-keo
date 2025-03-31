@@ -1,6 +1,5 @@
 import {posts} from "@/app/posts/[id]/mock-data";
 import SuggestedCard from "@/components/Post/PostDetail/SuggestedCard";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 function SuggestedPosts() {
     return (

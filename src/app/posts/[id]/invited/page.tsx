@@ -3,7 +3,6 @@ import PostBreadcrumb from "@/components/Post/PostBreadcrumb";
 import PostDetailContentHeader from "@/components/Post/PostDetail/PostDetailContentHeader";
 import PostDetailMarkdown from "@/components/Post/PostDetail/PostDetailMarkdown";
 import InvitationList from "@/components/Post/PostInvited/InvitationList";
-import {Button} from "@/components/ui/button";
 import PostLocation from "@/components/Post/PostLocation";
 
 function PostInvited() {
