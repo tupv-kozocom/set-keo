@@ -34,7 +34,7 @@ function DatePicker({ id, className, placeholder = 'Pick a date', value, onChang
           variant="outline"
           className={cn(
             'w-full p-3 h-[50px] text-left rounded-lg bg-transparent font-normal border border-border-light',
-            'focus:ring-primary focus:outline-none focus:ring-2',
+            'focus:ring-primary focus:outline-none focus:ring-1',
             isOpen && 'ring-primary ring-2',
             !selectedDate && 'text-muted-foreground',
             className

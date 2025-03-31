@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import FeaturedList from '@/components/FeaturedList';
 import SlideShow from '@/components/SlideShow';
 
@@ -11,12 +10,24 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 
-import {PageListProps} from "@/types/pageList.type";
+import { PageListProps } from '@/types/pageList.type';
 import ROUTES from '@/constants/routeName';
+import CustomBreadcrumb from './CustomBreadcrumb';
 
 export default function PageList({ type, items, title, slides, titleLink }: PageListProps) {
+  const breadCrumbList = [
+    {
+      label: 'Trang chủ',
+      href: ROUTES.HOME,
+    },
+    {
+      label: titleLink || 'Danh sách hot',
+      isCurrent: true,
+    },
+  ];
+
   return (
     <main className="min-h-screen py-8 px-4">
       <div className="max-w-7xl mx-auto">
@@ -26,13 +37,7 @@ export default function PageList({ type, items, title, slides, titleLink }: Page
         </div>
 
         {/* navigation */}
-        <div className="mb-4 flex items-center text-sm text-gray-500">
-          <Link href={ROUTES.HOME} className="hover:text-gray-700">
-            Trang chủ
-          </Link>
-          <span className="mx-2">{'>'}</span>
-          <span className="font-medium text-primary">{titleLink || 'Danh sách hot'}</span>
-        </div>
+        <CustomBreadcrumb items={breadCrumbList} />
 
         {/* Restaurant grid */}
         <FeaturedList type={type} items={items} title={title} />
@@ -76,4 +81,4 @@ export default function PageList({ type, items, title, slides, titleLink }: Page
       </div>
     </main>
   );
-} 
+}

@@ -1,14 +1,17 @@
 'use client';
 import ContentWrapper from '@/components/ContentWrapper';
-import RadioGroup from '@/components/Form/RadioGroup';
+import CustomRadioGroup from '@/components/Form/CustomRadioGroup';
 import { useState } from 'react';
 import CreateForm from './component/CreateForm';
-import Image from 'next/image';
-import Link from 'next/link';
 import ROUTES from '@/constants/routeName';
+import CustomBreadcrumb from '@/components/CustomBreadcrumb';
 
 export default function Page() {
   const [postStatus, setPostStatus] = useState('public');
+  const breadCrumbList = [
+    { label: 'Trang chủ', href: ROUTES.HOME },
+    { label: 'Tạo cuộc hẹn nhóm', isCurrent: true },
+  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-4 sm:py-8">
@@ -20,30 +23,22 @@ export default function Page() {
       </div>
 
       {/* Breadcrumb */}
-      <div className="py-4 flex items-center space-x-2 text-sm">
-        <Link href={ROUTES.HOME}>Trang chủ</Link>
-        <Image src="/arrow-right.svg" width={6} height={6} alt="arrow-right" />
-        <Link href={ROUTES.CREATE} className="text-primary">
-          Tạo cuộc hẹn nhóm
-        </Link>
-      </div>
+      <CustomBreadcrumb items={breadCrumbList} />
 
       <ContentWrapper
         className="sm:p-16 max-w-4xl m-auto sm:mt-8"
         title="Tạo cuộc hẹn"
         titleSize={30}
         actions={
-          <div className="flex flex-col">
-            <RadioGroup
-              name="gender"
-              options={[
-                { value: 'public', label: 'Công khai' },
-                { value: 'private', label: 'Riêng tư' },
-              ]}
-              selectedValue={postStatus}
-              onChange={setPostStatus}
-            />
-          </div>
+          <CustomRadioGroup
+            className="flex-row"
+            options={[
+              { value: 'public', label: 'Công khai' },
+              { value: 'private', label: 'Riêng tư' },
+            ]}
+            selectedValue={postStatus}
+            onChange={setPostStatus}
+          />
         }
       >
         <CreateForm />

@@ -1,15 +1,15 @@
 import DatePicker from '@/components/Form/DatePicker';
-import Input from '@/components/Form/Input';
+import Input from '@/components/ui/input';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
 const CreateForm = () => {
-  const [emails, setEmails] = useState(['tupham@gmail.com', 'trungle@gmail.com']);
+  const [emails, setEmails] = useState<string[]>([]);
   const [images, setImages] = useState<string[]>([]);
   const [email, setEmail] = useState('');
 
   // Thêm email
-  const addEmail = (e: { key: string; preventDefault: () => void; }) => {
+  const addEmail = (e: { key: string; preventDefault: () => void }) => {
     if (e.key === 'Enter' && email.trim()) {
       e.preventDefault();
 
@@ -52,12 +52,7 @@ const CreateForm = () => {
 
       {/* Chi phí */}
       <div className="relative mb-4">
-        <Input
-          name="budget"
-          type="text"
-          className="mt-4 focus:outline-primary"
-          placeholder="Chi phí dự kiến/người*"
-        />
+        <Input name="budget" type="text" className="mt-4 focus:outline-primary" placeholder="Chi phí dự kiến/người*" />
         <span className="absolute top-6.5 right-4 underline">đ</span>
       </div>
 
