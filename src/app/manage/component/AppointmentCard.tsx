@@ -13,7 +13,7 @@ interface AppointmentCardProps {
 
 const AppointmentCard = ({ image, title, date, price }: AppointmentCardProps) => {
   return (
-    <div className="relative bg-white rounded-lg sm:p-4 flex flex-col sm:flex-row gap-4 items-stretch">
+    <div className="relative bg-white rounded-lg sm:p-4 flex flex-col mb-12 sm:mb-0 sm:flex-row gap-4 items-stretch">
       {/* Hình ảnh */}
       <Image
         src={image}
@@ -40,8 +40,8 @@ const AppointmentCard = ({ image, title, date, price }: AppointmentCardProps) =>
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start sm:items-end mt-4 sm:mt-3 gap-3 sm:gap-0">
-          <div className="flex md:w-[80%] flex-wrap md:justify-start justify-center gap-3">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start sm:items-end mt-6 sm:mt-3 gap-6 sm:gap-0">
+          <div className="flex md:w-[80%] flex-wrap sm:justify-start justify-center gap-3">
             <div className="flex items-end gap-2 text-primary font-medium bg-soft px-3 py-2 rounded-lg">
               <Image src="/calendar.svg" width={16} height={16} alt="Calender" />
               <span className="text-sm leading-none font-semibold">{date}</span>
