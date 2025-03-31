@@ -8,13 +8,13 @@ type InputProps = {
 
 function Input({ type, placeholder, name, id, className }: InputProps) {
     return (
-        <input
-            type={type}
-            id={id}
-            placeholder={placeholder}
-            name={name}
-            className={`text-black border border-gray-300 rounded-lg w-full p-3 ${className}`}
-        />
+      <input
+        type={type}
+        id={id}
+        placeholder={placeholder}
+        name={name}
+        className={`border border-border-light placeholder:text-text-sub rounded-lg w-full p-3 ${className}`}
+      />
     );
 }
 
