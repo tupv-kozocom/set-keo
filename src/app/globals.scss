@@ -50,7 +50,6 @@
   --light-gray: #f8f8f8;
   --gray-extra-light: #fafafa;
   --border-light: #e0e0e0;
-  --cloud-gray: #f2f2f2;
 
   /* Gradients */
   --gradient: linear-gradient(to bottom right, var(--yellow) 0%, var(--red) 100%);
@@ -61,7 +60,7 @@
   --text-heading: #5c5954;
 
   /* Fonts */
-  --font-sans: 'SVN-Gilroy', sans-serif;
+  --font-sans: 'SVN-Gilroy', Arial, Helvetica, sans-serif;
   --font-serif: 'Merriweather', serif;
   --font-mono: 'Courier New', monospace;
   --font-lato: 'Lato', sans-serif;
@@ -86,7 +85,6 @@
   --color-stroke: var(--stroke);
   --color-border-light: var(--border-light);
   --color-gray-extra-light: var(--gray-extra-light);
-  --color-cloud-gray: var(--cloud-gray);
 
   /* Fonts */
   --font-sans: var(--font-sans);
