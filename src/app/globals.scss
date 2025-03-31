@@ -1,7 +1,37 @@
-//@use 'tw-animate-css';
 @use 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
+
+/* Nhúng font SVN-Gilroy */
+@font-face {
+  font-family: 'SVN-Gilroy';
+  src: url('/fonts/SVN-Gilroy Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'SVN-Gilroy';
+  src: url('/fonts/SVN-Gilroy Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SVN-Gilroy';
+  src: url('/fonts/SVN-Gilroy Medium.otf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SVN-Gilroy';
+  src: url('/fonts/SVN-Gilroy Semibold.otf') format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SVN-Gilroy';
+  src: url('/fonts/SVN-Gilroy Bold.otf') format('opentype');
+  font-weight: 700;
+}
 
 :root {
   /* Colors */
