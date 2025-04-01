@@ -1,5 +1,4 @@
 // Common service type with shared properties
-import { SlideShowProps } from "./slide.type";
 export interface FeaturedItem {
   id: number;
   title: string;
@@ -18,5 +17,4 @@ export interface FeaturedListProps {
   type: CarouselType;
   items: FeaturedItem[];
   title: string;
-} 
-
+}

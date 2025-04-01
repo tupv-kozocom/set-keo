@@ -7,7 +7,9 @@ import { DayPicker } from 'react-day-picker';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 
-function Calendar({ className, classNames, showOutsideDays = true, ...props }: React.ComponentProps<typeof DayPicker>) {
+type CalendarProps = React.ComponentProps<typeof DayPicker>;
+
+function Calendar({ className, classNames, showOutsideDays = true, ...props }: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -49,11 +51,12 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: R
         day_hidden: 'invisible',
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ className, ...props }) => <ChevronLeft className={cn('size-4', className)} {...props} />,
-        IconRight: ({ className, ...props }) => <ChevronRight className={cn('size-4', className)} {...props} />,
-      }}
-      {...props}
+      components={
+        {
+          IconLeft: (props: any) => <ChevronLeft className={cn('size-4', props.className)} />,
+          IconRight: (props: any) => <ChevronRight className={cn('size-4', props.className)} />,
+        } as any
+      }
     />
   );
 }

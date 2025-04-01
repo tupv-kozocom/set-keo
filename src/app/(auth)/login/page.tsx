@@ -1,11 +1,11 @@
-import Link from "next/link";
-import Separator from "@/components/Separator";
-import SocialButton from "@/components/Form/SocialButton";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {Checkbox} from "@/components/ui/checkbox";
-import {Label} from "@/components/ui/label";
+import Link from 'next/link';
+import Separator from '@/components/Separator';
+import SocialButton from '@/components/Form/SocialButton';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import ROUTES from '@/constants/routeName';
+import Input from '@/components/ui/input';
 
 function Login() {
   return (

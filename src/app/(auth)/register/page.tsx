@@ -1,9 +1,9 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import {Label} from "@/components/ui/label";
-import {Button} from "@/components/ui/button";
+import { Checkbox } from '@/components/ui/checkbox';
+import Link from 'next/link';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 import ROUTES from '@/constants/routeName';
+import Input from '@/components/ui/input';
 
 function Register() {
   return (
