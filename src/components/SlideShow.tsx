@@ -3,19 +3,20 @@
 import { useState, useEffect } from "react";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { SlideShowProps } from "@/types/slide.type";
-
+} from '@/components/ui/carousel';
+import { SlideShowProps } from '@/types/slide.type';
+import Image from 'next/image';
 
 const SlideShow = ({ slides, fullWidth = false }: SlideShowProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [api, setApi] = useState<any>(null);
+  const [api, setApi] = useState<CarouselApi>();
 
-  // Theo dõi thay đổi slide khi API có sẵn
+  // Change currentSlide when api changes
   useEffect(() => {
     if (!api) return;
 
@@ -23,13 +24,13 @@ const SlideShow = ({ slides, fullWidth = false }: SlideShowProps) => {
       setCurrentSlide(api.selectedScrollSnap());
     };
 
-    api.on("select", onSelect);
+    api.on('select', onSelect);
     return () => {
-      api.off("select", onSelect);
+      api.off('select', onSelect);
     };
   }, [api]);
 
-  // Hàm điều hướng đến slide cụ thể
+  // Function to scroll to a specific slide
   const scrollToSlide = (index: number) => {
     if (api) {
       api.scrollTo(index);
@@ -40,16 +41,14 @@ const SlideShow = ({ slides, fullWidth = false }: SlideShowProps) => {
 
   return (
     <div className={`relative ${fullWidth ? 'w-full' : 'w-full lg:w-2/3'} h-full rounded-2xl overflow-hidden`}>
-      <Carousel 
-        className="w-full h-full relative" 
-        opts={{ startIndex: currentSlide }}
-        setApi={setApi}
-      >
+      <Carousel className="w-full h-full relative" opts={{ startIndex: currentSlide }} setApi={setApi}>
         <CarouselContent className="h-full">
           {slides.map((slide) => (
             <CarouselItem key={slide.id} className="h-full">
               <div className="w-full">
-                <img
+                <Image
+                  width={2000}
+                  height={280}
                   src={slide.image}
                   alt={slide.alt}
                   className="object-cover md:h-125 h-70 w-full"
@@ -58,7 +57,7 @@ const SlideShow = ({ slides, fullWidth = false }: SlideShowProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
+
         <CarouselPrevious className="absolute left-4 hover:bg-white/70 h-8 w-8 rounded-full border-0 bg-white/30 text-black" />
         <CarouselNext className="absolute right-4 hover:bg-white/70 h-8 w-8 rounded-full border-0 bg-white/30 text-black" />
 

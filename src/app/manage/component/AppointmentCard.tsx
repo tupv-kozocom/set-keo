@@ -14,7 +14,7 @@ interface AppointmentCardProps {
 const AppointmentCard = ({ image, title, date, price }: AppointmentCardProps) => {
   return (
     <div className="relative bg-white rounded-lg sm:p-4 flex flex-col mb-12 sm:mb-0 sm:flex-row gap-4 items-stretch">
-      {/* Hình ảnh */}
+      {/* Image */}
       <Image
         src={image}
         width={156}
@@ -23,7 +23,7 @@ const AppointmentCard = ({ image, title, date, price }: AppointmentCardProps) =>
         className="w-full sm:w-[156px] h-[200px] sm:h-[156px] object-cover rounded-md"
       />
 
-      {/* Nội dung */}
+      {/* Content */}
       <div className="flex flex-1 flex-col justify-between">
         <div className="flex justify-between items-start gap-2">
           <div className="w-full sm:w-[80%]">

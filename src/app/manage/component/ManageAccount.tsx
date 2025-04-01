@@ -24,7 +24,7 @@ const ManageAccount = () => {
         }
       >
         <div className="space-y-6">
-          {/* Giới tính */}
+          {/* Gender */}
           <CustomRadioGroup
             className="flex-row my-6"
             options={[
@@ -36,7 +36,7 @@ const ManageAccount = () => {
             onChange={setGender}
           />
 
-          {/* Họ và Tên */}
+          {/* Name */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <Label htmlFor="last-name">Họ</Label>
@@ -60,7 +60,7 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Tỉnh/Thành phố và Quận/Huyện */}
+          {/* Address */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <Label htmlFor="province">Tỉnh/Thành phố</Label>
@@ -88,7 +88,7 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Số điện thoại và Email */}
+          {/* Phone and Email */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <Label htmlFor="phone">Số điện thoại</Label>
@@ -112,13 +112,13 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Ngày sinh */}
+          {/* Date of birth */}
           <div className="flex flex-col">
             <Label htmlFor="dob">Ngày sinh</Label>
             <DatePicker id="dob" placeholder="Chọn" className="mt-4 focus:outline-primary" />
           </div>
 
-          {/* Nút lưu */}
+          {/* Save */}
           <div className="flex justify-start">
             <Button className="bg-primary text-white px-10 py-2 rounded-[10px] cursor-pointer">LƯU</Button>
           </div>

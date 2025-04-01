@@ -8,7 +8,7 @@ const CreateForm = () => {
   const [images, setImages] = useState<string[]>([]);
   const [email, setEmail] = useState('');
 
-  // Thêm email
+  // Add email
   const addEmail = (e: { key: string; preventDefault: () => void }) => {
     if (e.key === 'Enter' && email.trim()) {
       e.preventDefault();
@@ -20,12 +20,12 @@ const CreateForm = () => {
     }
   };
 
-  // Xóa email
+  // Remove email
   const removeEmail = (emailToRemove: string) => {
     setEmails(emails.filter((email) => email !== emailToRemove));
   };
 
-  // Xử lý upload ảnh
+  // Upload image
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
@@ -36,7 +36,7 @@ const CreateForm = () => {
 
   return (
     <div className="">
-      {/* Tiêu đề */}
+      {/* Title */}
       <Input
         name="title"
         type="text"
@@ -44,19 +44,19 @@ const CreateForm = () => {
         placeholder="Tên địa điểm vui chơi, ăn uống*"
       />
 
-      {/* Thời gian và ngày */}
+      {/* Time and Date */}
       <div className="grid sm:grid-cols-2 sm:gap-6">
         <Input name="time" type="text" className="mt-4 focus:outline-primary" placeholder="Thời gian*" />
         <DatePicker placeholder="Ngày" className="mt-4 focus:outline-primary" />
       </div>
 
-      {/* Chi phí */}
+      {/* Budget */}
       <div className="relative mb-4">
         <Input name="budget" type="text" className="mt-4 focus:outline-primary" placeholder="Chi phí dự kiến/người*" />
         <span className="absolute top-6.5 right-4 underline">đ</span>
       </div>
 
-      {/* Nội dung chi tiết */}
+      {/* Detail */}
       <div className="group relative rounded-[10px] border border-border-light ring-0 focus-within:ring-1 focus-within:ring-primary focus-within:border-primary transition-all">
         <textarea
           placeholder="Nội dung chi tiết"
@@ -71,7 +71,7 @@ const CreateForm = () => {
         </button>
       </div>
 
-      {/* Hiển thị ảnh đã chọn */}
+      {/* Images have been uploaded */}
       <div className="mt-4">
         <div className="mt-2 flex flex-wrap gap-2">
           {images.map((image, index) => (
@@ -95,7 +95,7 @@ const CreateForm = () => {
         {images.length ? <p className="text-sm text-pink mt-4">Chú ý kích thước ảnh dưới 5Mb</p> : ''}
       </div>
 
-      {/* Địa chỉ */}
+      {/* Address */}
       <Input
         name="address"
         type="text"
@@ -103,7 +103,7 @@ const CreateForm = () => {
         placeholder="Địa chỉ*"
       />
 
-      {/* Bản đồ */}
+      {/* Map */}
       <div className="w-full mt-4">
         <iframe
           className="rounded-[10px]"
@@ -126,7 +126,7 @@ const CreateForm = () => {
         placeholder="Nhập email mới bạn bè*"
       />
 
-      {/* Danh sách email */}
+      {/* Email List */}
       <ul className="mt-4 flex flex-col w-fit max-w-[320px] sm:max-w-[480px]">
         {emails.map((email) => (
           <li key={email} className="flex flex-1 gap-8 justify-between text-blue sm:pl-4 py-1">

@@ -16,9 +16,8 @@ import {
 import ROUTES from '@/constants/routeName';
 
 export default function FeaturedList({ type, items, title }: FeaturedListProps) {
-  // Map các loại carousel sang tiêu đề
-
   const hasCheckin = type === 'checkin';
+  
   return (
     <section className="py-12 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 ">
       <h2 className={`text-3xl font-bold mb-8  ${hasCheckin && 'lg:hidden'}`}>{title || 'Dịch vụ'}</h2>
