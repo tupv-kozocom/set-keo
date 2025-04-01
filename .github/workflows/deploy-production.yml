@@ -11,65 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
           cache: 'npm'
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
       - name: Create .env file
         run: echo "${{secrets.ENV_PRODUCTION}}" > .env
       - run: npm i --force
       - run: npm run build
-      - name: Cache build
-        uses: actions/cache@v4
-        with:
-          path: .next
-          key: build-${{ github.sha }}
-
   deploy:
-    runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
     steps:
       - name: Executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.2.0
-        with:
+      - uses: appleboy/ssh-action@v1
+      - with:
           host: ${{ secrets.HOST_PRODUCTION }}
           username: ${{ secrets.USERNAME_PRODUCTION }}
           password: ${{ secrets.PASSWORD_PRODUCTION }}
-          port: ${{ secrets.PORT_PRODUCTION }}
+          port: ${{secrets.PORT_PRODUCTION}}
           script: |
-            set -e
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-
-            echo "🚀 Deploying to production..."
-
-            cd ~/deploy-node-server
-
-            echo "📥 Fetching latest code..."
+            cd ~/set-keo
             git fetch --all
             git reset --hard origin/main
-
-            echo "🔧 Setting up environment..."
             echo "${{secrets.ENV_PRODUCTION}}" > .env
-
-            echo "📦 Installing dependencies..."
             npm i --force
-
-            echo "🔄 Generating Prisma client..."
-            npx prisma generate
-
-            echo "🏗️ Building application..."
             npm run build
-
-            echo "🔄 Restarting server..."
-            pm2 reload Fastify --update-env
-
-            echo "✅ Deployment completed successfully!"
+            pm2 restart set-keo-ui

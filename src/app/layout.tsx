@@ -4,8 +4,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Set Keo - Your Travel Companion',
-  description: 'Discover amazing places and experiences with Set Keo',
+  title: 'Sét kèo - Thăng hoa cùng bạn',
+  description: 'Khám phá những điểm đến tuyệt vời và trải nghiệm thú vị cùng Sét kèo',
   keywords: ['travel', 'Set Keo', 'explore', 'adventure', 'tourism'],
   authors: [{ name: 'Set Keo Team', url: 'https://setkeo.fun' }],
   creator: 'Set Keo Team',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://setkeo.fun'),
   openGraph: {
     title: 'Set Keo - Your Travel Companion',
-    description: 'Discover amazing places and experiences with Set Keo',
+    description: 'Khám phá những điểm đến tuyệt vời và trải nghiệm thú vị cùng Sét kèo',
     url: 'https://setkeo.fun',
     siteName: 'Set Keo',
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@setkeo',
     title: 'Set Keo - Your Travel Companion',
-    description: 'Discover amazing places and experiences with Set Keo',
+    description: 'Khám phá những điểm đến tuyệt vời và trải nghiệm thú vị cùng Sét kèo',
     images: ['https://setkeo.fun/_next/image?url=%2Fimages%2Fbanner1.jpg&w=1920&q=75'],
   },
   alternates: {
