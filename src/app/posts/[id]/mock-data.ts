@@ -48,6 +48,27 @@ export const posts: Post[] = [
         "image": "/images/quan-nhau.jpg",
         "likes": 100,
         "comments": 27
+    },
+    {
+        "id": 7,
+        "title": "Một nước Ý thật khác",
+        "image": "/images/quan-nhau.jpg",
+        "likes": 100,
+        "comments": 27
+    },
+    {
+        "id": 8,
+        "title": "Một nước Ý thật khác",
+        "image": "/images/quan-nhau.jpg",
+        "likes": 100,
+        "comments": 27
+    },
+    {
+        "id": 9,
+        "title": "Một nước Ý thật khác",
+        "image": "/images/quan-nhau.jpg",
+        "likes": 100,
+        "comments": 27
     }
 ]
 
