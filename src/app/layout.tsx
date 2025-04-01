@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   publisher: 'Set Keo',
   metadataBase: new URL('https://setkeo.fun'),
   openGraph: {
-    title: 'Set Keo - Your Travel Companion',
+    title: 'Sét kèo - Thăng hoa cùng bạn',
     description: 'Khám phá những điểm đến tuyệt vời và trải nghiệm thú vị cùng Sét kèo',
     url: 'https://setkeo.fun',
-    siteName: 'Set Keo',
+    siteName: 'Sét kèo',
     type: 'website',
     locale: 'en_US',
     images: [
