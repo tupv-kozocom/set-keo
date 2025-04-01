@@ -12,9 +12,9 @@ function PostInvited() {
                 <div className="w-full lg:w-[70%]">
                     <PostCarousel/>
                 </div>
-                <div className="hidden lg:w-[30%] lg:block relative">
-                    <div className="absolute inset-0">
-                        <aside className="bg-white rounded-lg p-4 relative h-full">
+                <div className="hidden lg:w-[30%] lg:block relative bg-white">
+                    <div className="absolute inset-0 p-4">
+                        <aside className="rounded-lg relative h-full">
                             <InvitationList
                                 isOwner={false}
                             />

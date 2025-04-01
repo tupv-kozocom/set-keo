@@ -8,7 +8,7 @@ type InvitationListProps = {
 function InvitationList({isOwner}: InvitationListProps) {
     return (
         <>
-            <div className="flex flex-col justify-between absolute inset-0">
+            <div className="flex flex-col justify-between absolute inset-0 p-4">
                 <div className="flex justify-between items-center">
                     <h1 className="font-bold">Bạn bè được mời</h1>
                     <div className="text-sm text-gray-400">4/10 trả lời</div>
