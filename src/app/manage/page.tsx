@@ -10,11 +10,11 @@ import MANAGE_TABS from '@/constants/manageTab';
 
 const TabContent = ({ activeTab }: { activeTab: TabId }) => {
   switch (activeTab) {
-    case 'appointments':
+    case MANAGE_TABS.APPOINTMENTS:
       return <ManageAppointment />;
-    case 'invitations':
+    case MANAGE_TABS.INVITATIONS:
       return <ManageInvitation />;
-    case 'profile':
+    case MANAGE_TABS.PROFILE:
       return <ManageAccount />;
     default:
       return null;
@@ -31,7 +31,7 @@ export default function Page() {
   return (
     <div className="grid grid-cols-12 max-w-7xl mx-auto gap-6 lg:p-12 md:p-8 p-4">
       <Sidebar onTabChange={handleTabChange} />
-      <main className="col-span-12 xl:col-span-9 bg-white rounded-lg p-8">
+      <main className="col-span-12 xl:col-span-9">
         <TabContent activeTab={activeTab} />
       </main>
     </div>

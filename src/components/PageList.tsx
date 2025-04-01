@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import FeaturedList from '@/components/FeaturedList';
 import SlideShow from '@/components/SlideShow';
 
@@ -11,11 +10,23 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 
-import {PageListProps} from "@/types/pageList.type";
+import { PageListProps } from '@/types/pageList.type';
+import ROUTES from '@/constants/routeName';
+import CustomBreadcrumb from './CustomBreadcrumb';
 
-export default function PageList({type, items, title, slides, titleLink}:PageListProps) {
+export default function PageList({ type, items, title, slides, titleLink }: PageListProps) {
+  const breadCrumbList = [
+    {
+      label: 'Trang chủ',
+      href: ROUTES.HOME,
+    },
+    {
+      label: titleLink || 'Danh sách hot',
+      isCurrent: true,
+    },
+  ];
 
   return (
     <main className="min-h-screen py-8 px-4">
@@ -24,16 +35,12 @@ export default function PageList({type, items, title, slides, titleLink}:PageLis
         <div className="h-[300px] mb-6">
           <SlideShow slides={slides} fullWidth={true} />
         </div>
-        
+
         {/* navigation */}
-        <div className="mb-4 flex items-center text-sm text-gray-500">
-          <Link href="/" className="hover:text-gray-700">Trang chủ</Link>
-          <span className="mx-2">{'>'}</span>
-          <span className="font-medium text-primary">{titleLink || "Danh sách hot"}</span>
-        </div>
-        
+        <CustomBreadcrumb items={breadCrumbList} />
+
         {/* Restaurant grid */}
-        <FeaturedList type={type} items={items} title={title}/>
+        <FeaturedList type={type} items={items} title={title} />
 
         {/* Pagination use shadcn/ui component */}
         <div className="flex justify-center mt-8">
@@ -43,19 +50,27 @@ export default function PageList({type, items, title, slides, titleLink}:PageLis
                 <PaginationPrevious href="#" className="border border-gray-200 bg-white hover:bg-gray-100" />
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">1</PaginationLink>
+                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">
+                  1
+                </PaginationLink>
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" isActive className="bg-primary text-white hover:bg-primary/90 border-primary">2</PaginationLink>
+                <PaginationLink href="#" isActive className="bg-primary text-white hover:bg-primary/90 border-primary">
+                  2
+                </PaginationLink>
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">3</PaginationLink>
+                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">
+                  3
+                </PaginationLink>
               </PaginationItem>
               <PaginationItem>
                 <PaginationEllipsis className="border border-gray-200 bg-white" />
               </PaginationItem>
               <PaginationItem>
-                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">8</PaginationLink>
+                <PaginationLink href="#" className="border border-gray-200 bg-white hover:bg-gray-100">
+                  8
+                </PaginationLink>
               </PaginationItem>
               <PaginationItem>
                 <PaginationNext href="#" className="border border-gray-200 bg-white hover:bg-gray-100" />
@@ -66,4 +81,4 @@ export default function PageList({type, items, title, slides, titleLink}:PageLis
       </div>
     </main>
   );
-} 
+}

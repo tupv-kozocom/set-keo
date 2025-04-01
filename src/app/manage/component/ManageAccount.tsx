@@ -1,11 +1,11 @@
 import ContentWrapper from '@/components/ContentWrapper';
 import DatePicker from '@/components/Form/DatePicker';
-import Input from '@/components/Form/Input';
-import Label from '@/components/Form/Label';
-import RadioGroup from '@/components/Form/RadioGroup';
+import CustomRadioGroup from '@/components/Form/CustomRadioGroup';
 import Select from '@/components/Form/Select';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import Input from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const ManageAccount = () => {
   const [gender, setGender] = useState('male');
@@ -24,24 +24,22 @@ const ManageAccount = () => {
         }
       >
         <div className="space-y-6">
-          {/* Giới tính */}
-          <div className="flex flex-col">
-            <RadioGroup
-              name="gender"
-              options={[
-                { value: 'male', label: 'Nam' },
-                { value: 'female', label: 'Nữ' },
-                { value: 'other', label: 'Khác' },
-              ]}
-              selectedValue={gender}
-              onChange={setGender}
-            />
-          </div>
+          {/* Gender */}
+          <CustomRadioGroup
+            className="flex-row my-6"
+            options={[
+              { value: 'male', label: 'Nam' },
+              { value: 'female', label: 'Nữ' },
+              { value: 'other', label: 'Khác' },
+            ]}
+            selectedValue={gender}
+            onChange={setGender}
+          />
 
-          {/* Họ và Tên */}
+          {/* Name */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="last-name" name="Họ" />
+              <Label htmlFor="last-name">Họ</Label>
               <Input
                 name="last-name"
                 type="text"
@@ -51,7 +49,7 @@ const ManageAccount = () => {
               />
             </div>
             <div>
-              <Label htmlFor="first-name" name="Tên" />
+              <Label htmlFor="first-name">Tên</Label>
               <Input
                 name="name"
                 type="text"
@@ -62,10 +60,10 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Tỉnh/Thành phố và Quận/Huyện */}
+          {/* Address */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="province" name="Tỉnh/Thành phố" />
+              <Label htmlFor="province">Tỉnh/Thành phố</Label>
               <Select
                 id="province"
                 name="province"
@@ -77,7 +75,7 @@ const ManageAccount = () => {
               />
             </div>
             <div>
-              <Label htmlFor="district" name="Quận/Huyện" />
+              <Label htmlFor="district">Quận/Huyện</Label>
               <Select
                 id="district"
                 name="district"
@@ -90,10 +88,10 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Số điện thoại và Email */}
+          {/* Phone and Email */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="phone" name="Số điện thoại" />
+              <Label htmlFor="phone">Số điện thoại</Label>
               <Input
                 name="phone"
                 type="tel"
@@ -103,7 +101,7 @@ const ManageAccount = () => {
               />
             </div>
             <div>
-              <Label htmlFor="email" name="Email" />
+              <Label htmlFor="email">Email</Label>
               <Input
                 name="email"
                 id="email"
@@ -114,13 +112,13 @@ const ManageAccount = () => {
             </div>
           </div>
 
-          {/* Ngày sinh */}
+          {/* Date of birth */}
           <div className="flex flex-col">
-            <Label htmlFor="dob" name="Ngày sinh" />
+            <Label htmlFor="dob">Ngày sinh</Label>
             <DatePicker id="dob" placeholder="Chọn" className="mt-4 focus:outline-primary" />
           </div>
 
-          {/* Nút lưu */}
+          {/* Save */}
           <div className="flex justify-start">
             <Button className="bg-primary text-white px-10 py-2 rounded-[10px] cursor-pointer">LƯU</Button>
           </div>

@@ -1,22 +1,28 @@
+import { cn } from '@/lib/utils';
+
 type SelectProps = {
   id: string;
   name: string;
   data: { value: string; label: string }[];
   className?: string;
+  placeHolder?: string;
 };
 
-function Select({ id, name, data, className }: SelectProps) {
+function Select({ id, name, data, className, placeHolder }: SelectProps) {
   return (
     <div className="relative w-full">
       <select
         id={id}
         name={name}
         defaultValue=""
-        className={`w-full border border-border-light rounded-lg p-3 pr-10 focus:ring-primary appearance-none
-          text-text-sub has-[option:checked:not(:first-child)]:text-foreground ${className}`}
+        className={cn(
+          'w-full border border-border-light rounded-lg p-3 pr-10  appearance-none text-text-sub',
+          'focus:ring-primary has-[option:checked:not(:first-child)]:text-foreground',
+          className
+        )}
       >
         <option className="text-foreground" value="">
-          Chọn
+          {placeHolder || 'Chọn'}
         </option>
         {data.map((item) => (
           <option className="text-foreground" key={item.value} value={item.value}>

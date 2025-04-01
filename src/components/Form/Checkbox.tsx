@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils';
+
 type CheckboxProps = {
   name: string;
   id: string;
@@ -6,7 +8,7 @@ type CheckboxProps = {
 
 function Checkbox({ name, id, className }: CheckboxProps) {
   return (
-    <label className={`w-5 h-5 cursor-pointer ${className}`}>
+    <label className={cn('w-5 h-5 cursor-pointer', className)}>
       <input type="checkbox" id={id} name={name} className="peer hidden" />
       <div className="w-full h-full border border-border-light rounded-[3px] flex items-center justify-center peer-checked:hidden" />
       <svg
