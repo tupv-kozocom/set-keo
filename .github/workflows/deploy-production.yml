@@ -20,7 +20,7 @@ jobs:
         run: echo "${{secrets.ENV_PRODUCTION}}" > .env
       - run: npm i --force
       - run: npm run build
-      - name: send telegram message after build
+      - name: send telegram message after build success
         if: success()
         uses: appleboy/telegram-action@master
         with:
@@ -32,7 +32,7 @@ jobs:
             Commit message: ${{ github.event.commits[0].message }}
             Repository: ${{ github.repository }}
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-      - name: send telegram message after build
+      - name: send telegram message after build failure
         if: failure()
         uses: appleboy/telegram-action@master
         with:
@@ -66,7 +66,7 @@ jobs:
             npm i --force
             npm run build
             pm2 restart set-keo-ui
-      - name: send telegram message after deploy
+      - name: send telegram message after deploy success
         if: success()
         uses: appleboy/telegram-action@master
         with:
@@ -78,7 +78,7 @@ jobs:
             Commit message: ${{ github.event.commits[0].message }}
             Repository: ${{ github.repository }}
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-      - name: send telegram message after deploy
+      - name: send telegram message after deploy failure
         if: failure()
         uses: appleboy/telegram-action@master
         with:

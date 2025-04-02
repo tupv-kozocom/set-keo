@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: 'Sét kèo - Thăng hoa cùng bạn',
   description: 'Khám phá những điểm đến tuyệt vời và trải nghiệm thú vị cùng Sét kèo',
   keywords: ['travel', 'Set Keo', 'explore', 'adventure', 'tourism'],
-  authors: [{ name: 'Set Keo Team', url: 'https://setkeo.fun' }],
-  creator: 'Set Keo Team',
+  authors: [{ name: 'Setkeo Team', url: 'https://setkeo.fun' }],
+  creator: 'Setkeo Team',
   publisher: 'Set Keo',
   metadataBase: new URL('https://setkeo.fun'),
   openGraph: {
